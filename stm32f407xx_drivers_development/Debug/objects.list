@@ -1,0 +1,7 @@
+"./Drivers/SRC/I2C_driver.o"
+"./Drivers/SRC/SPI_driver.o"
+"./Drivers/SRC/stm32f407xx_gpio_driver.o"
+"./Src/main.o"
+"./Src/syscalls.o"
+"./Src/sysmem.o"
+"./Startup/startup_stm32f407vgtx.o"
