@@ -238,22 +238,6 @@ typedef struct
 } SYSCFG_RegDef_t;
 
 
-/*
- * peripheral register definition structure for SPI
- */
-
-typedef struct
-{
-	__vo uint32_t SPI_CR1;
-	__vo uint32_t SPI_CR2;
-	__vo uint32_t SPI_SR;
-	__vo uint32_t SPI_DR;
-	__vo uint32_t SPI_CRCPR;
-	__vo uint32_t SPI_RXCRCR;
-	__vo uint32_t SPI_TXCRCR;
-	__vo uint32_t SPI_I2SCFGR;
-	__vo uint32_t SPI_I2SPR;
-}SPI_RegDef_t;
 
 
 /*
@@ -271,6 +255,22 @@ typedef struct
 	__vo uint32_t SPI_SSM;
 }SPI_config_t;
 
+/*
+ * peripheral register definition structure for SPI
+ */
+
+typedef struct
+{
+	__vo uint32_t SPI_CR1;
+	__vo uint32_t SPI_CR2;
+	__vo uint32_t SPI_SR;
+	__vo uint32_t SPI_DR;
+	__vo uint32_t SPI_CRCPR;
+	__vo uint32_t SPI_RXCRCR;
+	__vo uint32_t SPI_TXCRCR;
+	__vo uint32_t SPI_I2SCFGR;
+	__vo uint32_t SPI_I2SPR;
+}SPI_RegDef_t;
 
 /*
  * Handle  structure for SPIx Peripheral
@@ -304,6 +304,7 @@ typedef struct
 #define SPI1  				((SPI_RegDef_t*)SPI1_BASEADDR)
 #define SPI2  				((SPI_RegDef_t*)SPI2_BASEADDR)
 #define SPI3  				((SPI_RegDef_t*)SPI3_BASEADDR)
+#define SPI4				((SPI_RegDef_t*)SPI4_BASEADDR)
 
 
 
@@ -350,6 +351,7 @@ typedef struct
 #define SPI1_PCLK_EN() (RCC->APB2ENR |= (1 << 12))
 #define SPI2_PCLK_EN() (RCC->APB1ENR |= (1 << 14))
 #define SPI3_PCLK_EN() (RCC->APB1ENR |= (1 << 15))
+
 
 
 

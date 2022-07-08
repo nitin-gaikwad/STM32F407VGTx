@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (9-2020-q2-update)
+# Toolchain: GNU Tools for STM32 (10.3-2021.10)
 ################################################################################
 
 -include ../makefile.init
@@ -43,14 +43,14 @@ BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ART
 EXECUTABLES += \
 stm32f407xx_drivers_development.elf \
 
+MAP_FILES += \
+stm32f407xx_drivers_development.map \
+
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
 stm32f407xx_drivers_development.list \
-
-OBJCOPY_BIN += \
-stm32f407xx_drivers_development.bin \
 
 
 # All Target
@@ -60,8 +60,8 @@ all: main-build
 main-build: stm32f407xx_drivers_development.elf secondary-outputs
 
 # Tool invocations
-stm32f407xx_drivers_development.elf: $(OBJS) $(USER_OBJS) E:\LAB\STM32F407\STM32_projects\STM32F407VGTx\stm32f407xx_drivers_development\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "stm32f407xx_drivers_development.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\LAB\STM32F407\STM32_projects\STM32F407VGTx\stm32f407xx_drivers_development\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407xx_drivers_development.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+stm32f407xx_drivers_development.elf stm32f407xx_drivers_development.map: $(OBJS) $(USER_OBJS) D:\Ni3\STM32F407VGTx\stm32f407xx_drivers_development\STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "stm32f407xx_drivers_development.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Ni3\STM32F407VGTx\stm32f407xx_drivers_development\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407xx_drivers_development.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -75,17 +75,12 @@ stm32f407xx_drivers_development.list: $(EXECUTABLES) makefile objects.list $(OPT
 	@echo 'Finished building: $@'
 	@echo ' '
 
-stm32f407xx_drivers_development.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "stm32f407xx_drivers_development.bin"
-	@echo 'Finished building: $@'
-	@echo ' '
-
 # Other Targets
 clean:
-	-$(RM) default.size.stdout stm32f407xx_drivers_development.bin stm32f407xx_drivers_development.elf stm32f407xx_drivers_development.list
+	-$(RM) default.size.stdout stm32f407xx_drivers_development.elf stm32f407xx_drivers_development.list stm32f407xx_drivers_development.map
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

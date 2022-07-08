@@ -8,14 +8,22 @@
 #ifndef INC_SPI_DRIVER_H_
 #define INC_SPI_DRIVER_H_
 
-// 1. SPI Initialization
+#include "stm32f407xx.h"
+// 1. SPI Initialization and Deinitialization
 
-// 2. SPI Clock Control
+void SPI_Init(SPI_Handle_t *pSPIHandle);
 
+void SPI_DeInit(SPI_RegDef_t *pSPIx);
+/*
+ * @brief SPI Clock Control for GPIO
+ * @param  *pSPIx 	: SPI base address
+ * @param  EnorDi   :  Enable or disable clock of given SPI
+ */
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);
 // 3. SPI Recieve
-
+uint16_t  SPI_Receive();
 // 4. SPI Transmitt
-
+void SPI_Transmitt();
 // 5. SPI Interrupt
 
 // 6. SPI Interrupt Handler
