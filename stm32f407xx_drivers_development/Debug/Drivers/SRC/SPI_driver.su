@@ -1,1 +1,6 @@
-../Drivers/SRC/SPI_driver.c:15:6:SPI_PeriClockControl	16	static
+../Drivers/SRC/SPI_driver.c:30:6:SPI_PeriClockControl	16	static
+../Drivers/SRC/SPI_driver.c:63:11:SPI_Receive	24	static
+../Drivers/SRC/SPI_driver.c:69:6:SPI_SendData	24	static
+../Drivers/SRC/SPI_driver.c:83:6:SPI_IRQInterruptConfig	16	static
+../Drivers/SRC/SPI_driver.c:93:6:SPI_IRQPriorityConfig	16	static
+../Drivers/SRC/SPI_driver.c:103:6:SPI_IRQHandling	16	static

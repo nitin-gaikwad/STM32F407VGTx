@@ -127,3 +127,105 @@ Finished building: default.size.stdout
  
 Finished building: stm32f407xx_drivers_development.list
  
+12:07:43 **** Incremental Build of configuration Debug for project stm32f407xx_drivers_development ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"D:/Ni3/STM32F407VGTx/stm32f407xx_drivers_development/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/SRC/SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"D:/Ni3/STM32F407VGTx/stm32f407xx_drivers_development/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/SRC/SPI_driver.d" -MT"Drivers/SRC/SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/SRC/SPI_driver.o"
+arm-none-eabi-gcc "../Drivers/SRC/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"D:/Ni3/STM32F407VGTx/stm32f407xx_drivers_development/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/SRC/stm32f407xx_gpio_driver.d" -MT"Drivers/SRC/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/SRC/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "stm32f407xx_drivers_development.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Ni3\STM32F407VGTx\stm32f407xx_drivers_development\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407xx_drivers_development.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f407xx_drivers_development.elf
+ 
+arm-none-eabi-size   stm32f407xx_drivers_development.elf 
+arm-none-eabi-objdump -h -S  stm32f407xx_drivers_development.elf  > "stm32f407xx_drivers_development.list"
+   text	   data	    bss	    dec	    hex	filename
+   2084	      8	   1568	   3660	    e4c	stm32f407xx_drivers_development.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f407xx_drivers_development.list
+ 
+12:13:10 **** Incremental Build of configuration Debug for project stm32f407xx_drivers_development ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"D:/Ni3/STM32F407VGTx/stm32f407xx_drivers_development/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Drivers/SRC/SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"D:/Ni3/STM32F407VGTx/stm32f407xx_drivers_development/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/SRC/SPI_driver.d" -MT"Drivers/SRC/SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/SRC/SPI_driver.o"
+arm-none-eabi-gcc "../Drivers/SRC/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"D:/Ni3/STM32F407VGTx/stm32f407xx_drivers_development/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/SRC/stm32f407xx_gpio_driver.d" -MT"Drivers/SRC/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/SRC/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -o "stm32f407xx_drivers_development.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Ni3\STM32F407VGTx\stm32f407xx_drivers_development\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407xx_drivers_development.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f407xx_drivers_development.elf
+ 
+arm-none-eabi-size   stm32f407xx_drivers_development.elf 
+arm-none-eabi-objdump -h -S  stm32f407xx_drivers_development.elf  > "stm32f407xx_drivers_development.list"
+   text	   data	    bss	    dec	    hex	filename
+   2084	      8	   1568	   3660	    e4c	stm32f407xx_drivers_development.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f407xx_drivers_development.list
+ 
+12:14:19 **** Incremental Build of configuration Debug for project stm32f407xx_drivers_development ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/SRC/SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"D:/Ni3/STM32F407VGTx/stm32f407xx_drivers_development/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/SRC/SPI_driver.d" -MT"Drivers/SRC/SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/SRC/SPI_driver.o"
+../Drivers/SRC/SPI_driver.c: In function 'SPI_Receive':
+../Drivers/SRC/SPI_driver.c:60:1: warning: control reaches end of non-void function [-Wreturn-type]
+   60 | }
+      | ^
+arm-none-eabi-gcc -o "stm32f407xx_drivers_development.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Ni3\STM32F407VGTx\stm32f407xx_drivers_development\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407xx_drivers_development.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f407xx_drivers_development.elf
+ 
+arm-none-eabi-size   stm32f407xx_drivers_development.elf 
+arm-none-eabi-objdump -h -S  stm32f407xx_drivers_development.elf  > "stm32f407xx_drivers_development.list"
+   text	   data	    bss	    dec	    hex	filename
+   2084	      8	   1568	   3660	    e4c	stm32f407xx_drivers_development.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f407xx_drivers_development.list
+ 
+12:14:40 **** Incremental Build of configuration Debug for project stm32f407xx_drivers_development ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/SRC/SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"D:/Ni3/STM32F407VGTx/stm32f407xx_drivers_development/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/SRC/SPI_driver.d" -MT"Drivers/SRC/SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/SRC/SPI_driver.o"
+../Drivers/SRC/SPI_driver.c: In function 'SPI_Receive':
+../Drivers/SRC/SPI_driver.c:60:2: error: 'retun' undeclared (first use in this function)
+   60 |  retun 0;
+      |  ^~~~~
+../Drivers/SRC/SPI_driver.c:60:2: note: each undeclared identifier is reported only once for each function it appears in
+../Drivers/SRC/SPI_driver.c:60:7: error: expected ';' before numeric constant
+   60 |  retun 0;
+      |       ^~
+      |       ;
+../Drivers/SRC/SPI_driver.c:61:1: warning: control reaches end of non-void function [-Wreturn-type]
+   61 | }
+      | ^
+make: *** [Drivers/SRC/subdir.mk:25: Drivers/SRC/SPI_driver.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+12:14:49 **** Incremental Build of configuration Debug for project stm32f407xx_drivers_development ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/SRC/SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"D:/Ni3/STM32F407VGTx/stm32f407xx_drivers_development/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/SRC/SPI_driver.d" -MT"Drivers/SRC/SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/SRC/SPI_driver.o"
+arm-none-eabi-gcc -o "stm32f407xx_drivers_development.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Ni3\STM32F407VGTx\stm32f407xx_drivers_development\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407xx_drivers_development.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f407xx_drivers_development.elf
+ 
+arm-none-eabi-size   stm32f407xx_drivers_development.elf 
+arm-none-eabi-objdump -h -S  stm32f407xx_drivers_development.elf  > "stm32f407xx_drivers_development.list"
+   text	   data	    bss	    dec	    hex	filename
+   2084	      8	   1568	   3660	    e4c	stm32f407xx_drivers_development.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f407xx_drivers_development.list
+ 
+15:04:16 **** Incremental Build of configuration Debug for project stm32f407xx_drivers_development ****
+make -j8 all 
+arm-none-eabi-size   stm32f407xx_drivers_development.elf 
+   text	   data	    bss	    dec	    hex	filename
+   2084	      8	   1568	   3660	    e4c	stm32f407xx_drivers_development.elf
+Finished building: default.size.stdout
+ 
+15:18:01 **** Incremental Build of configuration Debug for project stm32f407xx_drivers_development ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/SRC/SPI_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -DDEBUG -c -I../Inc -I"D:/Ni3/STM32F407VGTx/stm32f407xx_drivers_development/Drivers/INC" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/SRC/SPI_driver.d" -MT"Drivers/SRC/SPI_driver.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/SRC/SPI_driver.o"
+arm-none-eabi-gcc -o "stm32f407xx_drivers_development.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Ni3\STM32F407VGTx\stm32f407xx_drivers_development\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f407xx_drivers_development.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32f407xx_drivers_development.elf
+ 
+arm-none-eabi-size   stm32f407xx_drivers_development.elf 
+arm-none-eabi-objdump -h -S  stm32f407xx_drivers_development.elf  > "stm32f407xx_drivers_development.list"
+   text	   data	    bss	    dec	    hex	filename
+   2084	      8	   1568	   3660	    e4c	stm32f407xx_drivers_development.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32f407xx_drivers_development.list
+ 

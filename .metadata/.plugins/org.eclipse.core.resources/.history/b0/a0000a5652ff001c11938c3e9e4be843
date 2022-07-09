@@ -21,7 +21,7 @@ void SPI_DeInit(SPI_RegDef_t *pSPIx);
  */
 void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi);
 // 3. SPI Recieve
-uint16_t  SPI_Receive(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
+uint16_t  SPI_Receive();
 // 4. SPI Transmitt
 void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Len);
 // 5. SPI Interrupt
@@ -44,8 +44,8 @@ void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi);
 void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
 
 /**
-	* @brief  SPI IRQ Handler
-	* @param  *pHandle : pointer to SPI handle type
+	* @brief  GPIO IRQ Handler
+	* @param  PinNumber : PinNumber number
 	* @retval None
 	*/
 void SPI_IRQHandling(SPI_Handle_t *pHandle);
