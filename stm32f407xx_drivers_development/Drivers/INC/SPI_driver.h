@@ -12,6 +12,72 @@
 
 
 
+/*
+ * SPI device mode*/
+#define SPI_DEVICE_MODE_MASTER		1
+#define SPI_DEVICE_MODE_SLAVE		0
+
+/*
+ * SPI Bus Config
+ * */
+
+#define SPI_BUS_CONFIG_FD					1
+#define SPI_BUS_CONFIG_HD					2
+#define SPI_BUS_CONFIG_SIMPLEX_RXONLY		3
+
+
+/*
+ * SPI Bus Config
+ * */
+
+#define SPI_SCLK_DIV2				0
+#define SPI_SCLK_DIV4				1
+#define SPI_SCLK_DIV8				2
+#define SPI_SCLK_DIV16				3
+#define SPI_SCLK_DIV32				4
+#define SPI_SCLK_DIV64				5
+#define SPI_SCLK_DIV128				6
+#define SPI_SCLK_DIV256				7
+
+
+
+/*
+ * SPI Data Frame Format
+ *
+ *
+ *   */
+#define SPI_DFF_8BIT				0
+#define SPI_DFF_16BIT				1
+
+/*
+ * SPI CLOCK POLARITY
+ *
+ *
+ *   */
+#define SPI_CPOL_LOW				0
+#define SPI_CPOL_HIGH				1
+
+/*
+ * SPI CLOCK PHASE
+ *
+ *
+ *   */
+#define SPI_CPHA_LOW				0
+#define SPI_CPHA_HIGH				1
+
+
+/*
+ * SPI SLAVE SELECT MANAGEMENT (SSM)
+ *
+ *
+ *   */
+#define SPI_SSM_EN	1
+#define SPI_SSM_DI	0
+
+
+#define SPI_TXE_FLAG	(1<<SPI_SR_TXE)
+#define SPI_RXNE_FLAG	(1<<SPI_SR_RXNE)
+#define SPI_BUSY_FLAG	(1<<SPI_SR_BSY)
 
 /*
  * Configuration  structure for SPI
@@ -80,5 +146,7 @@ void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority);
 	* @retval None
 	*/
 void SPI_IRQHandling(SPI_Handle_t *pHandle);
+
+uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx, uint32_t FlagName);
 
 #endif /* INC_SPI_DRIVER_H_ */
