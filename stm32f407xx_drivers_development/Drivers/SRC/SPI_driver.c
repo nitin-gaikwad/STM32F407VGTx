@@ -9,68 +9,6 @@
 #include "SPI_driver.h"
 
 
-/*
- * SPI device mode*/
-#define SPI_DEVICE_MODE_MASTER		1
-#define SPI_DEVICE_MODE_SLAVE		0
-
-/*
- * SPI Bus Config
- * */
-
-#define SPI_BUS_CONFIG_FD					1
-#define SPI_BUS_CONFIG_HD					2
-#define SPI_BUS_CONFIG_SIMPLEX_RXONLY		3
-
-
-/*
- * SPI Bus Config
- * */
-
-#define SPI_SCLK_DIV2				0
-#define SPI_SCLK_DIV4				1
-#define SPI_SCLK_DIV8				2
-#define SPI_SCLK_DIV16				3
-#define SPI_SCLK_DIV32				4
-#define SPI_SCLK_DIV64				5
-#define SPI_SCLK_DIV128				6
-#define SPI_SCLK_DIV256				7
-
-
-
-/*
- * SPI Data Frame Format
- *
- *
- *   */
-#define SPI_DFF_8BIT				0
-#define SPI_DFF_16BIT				1
-
-/*
- * SPI CLOCK POLARITY
- *
- *
- *   */
-#define SPI_CPOL_LOW				0
-#define SPI_CPOL_HIGH				1
-
-/*
- * SPI CLOCK PHASE
- *
- *
- *   */
-#define SPI_CPHA_LOW				0
-#define SPI_CPHA_HIGH				1
-
-
-/*
- * SPI SLAVE SELECT MANAGEMENT (SSM)
- *
- *
- *   */
-#define SPI_SSM_EN	1
-#define SPI_SSM_DI	0
-
 
 // 1. SPI Initialization and De-initialization
 
@@ -172,21 +110,42 @@ void SPI_PeriClockControl(SPI_RegDef_t *pSPIx, uint8_t EnorDi)
 	}
 }
 
-// 3. SPI Recieve
+// 3. SPI Receive
 uint16_t  SPI_Receive(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len)
 {
 
 	return 0;
 }
-// 4. SPI Transmitt
+// 4. SPI Transmit
 void SPI_SendData(SPI_RegDef_t *pSPIx, uint8_t *pTxBuffer, uint32_t Len)
 {
+	while(Len>0)
+	{
+		//1. wait until TXE is SET
+
+		while(SPI_GetFlagStatus(pSPIx, SPI_TXE_FLAG) ==  FLAG_RESET);
+		//2. Check DFF bit in CR1
+		if(pSPIx->SPI_CR1 & (1<< SPI_CR1_DFF))
+		{
+			//16bit DFF
+			pSPIx->SPI_DR = *((uint16_t*)pTxBuffer);
+			Len--;
+			Len--;
+			(uint16_t*)pTxBuffer++;
+		}
+		else
+		{
+			// 8bit DFF
+			pSPIx->SPI_DR = *pTxBuffer;
+			Len--;
+			pTxBuffer++;
+
+		}
+	}
 
 
 }
-// 5. SPI Interrupt
 
-// 6. SPI Interrupt Handler
 
 /**
 	* @brief  Configure the interrupt for a given IRQNumber number
@@ -217,5 +176,15 @@ void SPI_IRQPriorityConfig(uint8_t IRQNumber, uint32_t IRQPriority)
 void SPI_IRQHandling(SPI_Handle_t *pHandle)
 {
 
+}
+
+uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx, uint32_t FlagName)
+{
+	if(pSPIx->SPI_SR & FlagName)
+	{
+		return FLAG_SET;
+	}
+
+	return FLAG_RESET;
 }
 
